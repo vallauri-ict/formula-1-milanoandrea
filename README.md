@@ -1,4 +1,6 @@
-# Lorenzo Rosso
+# Milano Andrea
+
+# NOTE: THE PROJECT IS NOT YET COMPLETED, CHECK THE MISSING.TXT FILE TO SEE WHAT'S NOT YET ENABLED
 
 ## Formula One Project
 
