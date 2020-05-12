@@ -1,43 +1,34 @@
 # Milano Andrea
 
-# NOTE: THE PROJECT IS NOT YET COMPLETED, CHECK THE MISSING.TXT FILE TO SEE WHAT'S NOT YET ENABLED
-
 ## Formula One Project
 
-Project about the simulation of the **F1 Championship**.<br>
-
-## Docs
-
-- [C#](https://docs.microsoft.com/it-it/dotnet/csharp/), .NET solutions
-- [HTML5](https://www.w3schools.com/html/default.asp)
-- [CSS3](https://www.w3schools.com/css/default.asp)
-- [Javascript](https://www.w3schools.com/js/default.asp)
-- [JQuery](https://www.w3schools.com/jquery/default.asp)
-- [Bootstrap](https://getbootstrap.com/)
-- [SQL](https://www.w3schools.com/sql/default.asp)
-- [VUEjs] (https://vuejs.org/)
+This project is a simulation of the **F1 Championship**.<br>
 
 Visual Studio 2019 platform.<br>
 Microsoft SQL Server Management Studio 18 <br>
 
-## Proj
+# Projects
 
-### proj 5 - FormulaOneWebApi
+### Project 1 - FormulaOneBatchConsole Project
 
-Web Api project
+C# console application to create and restore the db.
 
-### proj 4 - FormulaOneWebForm
+### Project 2 - FormulaOneDll
 
-An ASPX.NET page that shows DB tables
+C# library for the db connection, providing classes for every table.
 
-### proj 3 - FormulaOneCrudForm
+### Project 3 - FormulaOneCrudForm
 
-Simple Form with some CRUD actions on the DB tables<br>
+C# form that works as a simple crud.
 
-### proj 2 - FormulaOneDll
 
-Utility classes library
+### Project 4 - FormulaOneWebForm
 
-### proj 1 - FormulaOneBatch
+ASPX.NET webpage that just shows the tables.
 
-A console project for the direct sql actions on database (create, insert, delete, setConstraints...)
+### Project 5 - FormulaOneWebApi
+
+C# Web Api 2.0 that returns the data from the db, with also a simple crud.
+
+---
+# Database Diagram
