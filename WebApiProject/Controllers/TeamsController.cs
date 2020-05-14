@@ -27,7 +27,7 @@ namespace WebApiProject.Controllers
             db.Teams.Values.ToList().ForEach(team => t.Add(new TeamSimple(team)));
             return t;
         }
-        [Route("{id:int}")]
+        [Route("{id:int}/details")]
         public IHttpActionResult GetTeam(int id)
         {
             db.GetTeams();

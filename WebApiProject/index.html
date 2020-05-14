@@ -23,18 +23,18 @@
 
         
         <div class="grid">
-            <button id="CaricaDrivers" v-on:click="driversClick()" class="btn btn-danger">Drivers</button>
             <button id="CaricaTeams" v-on:click="teamsClick()" class="btn btn-danger">Teams</button>
+            <button id="CaricaDrivers" v-on:click="driversClick()" class="btn btn-danger">Drivers</button>
             <button id="CaricaCircuits" v-on:click="circuitsClick()" class="btn btn-danger">Circuits</button>
         </div>
         <div class="grid">
             <div>
-                <label style=" color:white; font-weight:bold">Driver ID: <input id="txtDriver" type="text" v-model="idDriver" /> </label>
-                <input type="button" value="Cerca pilota" id="CaricaDriver" @click="findDriver()" class="btn btn-outline-danger" />
-            </div>
-            <div>
                 <label style="color:white; font-weight:bold">Team ID: <input id="txtTeam" type="text" v-model="idTeam" /></label>
                 <input type="button" value="Cerca team" id="CaricaTeam" @click="findTeam()" class="btn btn-outline-danger" />
+            </div>
+            <div>
+                <label style=" color:white; font-weight:bold">Driver ID: <input id="txtDriver" type="text" v-model="idDriver" /> </label>
+                <input type="button" value="Cerca pilota" id="CaricaDriver" @click="findDriver()" class="btn btn-outline-danger" />
             </div>
             <div>
                 <label style="color:white; font-weight:bold">Circuit ID: <input id="txtCircuit" type="text" v-model="idCircuit" /></label>
@@ -70,7 +70,7 @@
                     <div class="card-body">
                     </div>
                 </div>
-                <button id="Esci" style=" display:block; font-weight:bold; width: 170px; margin-top:650px; margin-left:580px;" @click="viewDetails=false" class="btn btn-info">Esci</button>
+                <button id="Esci" style=" display:block; font-weight:bold; width: 170px; margin-top:650px; margin-left:580px;" @click="viewDetails=false" class="btn btn-danger">Back</button>
 
             </div>
             <div class="col-sm-6">
@@ -173,7 +173,7 @@
                         <tr class="table-light">
                             <th scope="row" class="stat-key">
 
-                                <span class="text">name</span>
+                                <span class="text">Name</span>
 
                             </th>
                             <td class="stat-value">{{ team.name}}</td>
@@ -183,24 +183,12 @@
                         <tr class="table-light">
                             <th scope="row" class="stat-key">
 
-                                <span class="text">full Team Name</span>
+                                <span class="text">Complete Name</span>
 
                             </th>
                             <td class="stat-value">{{ team.fullTeamName }}</td>
 
                         </tr>
-
-                        <tr class="table-light">
-                            <th scope="row" class="stat-key">
-
-                                <span class="text">power Unit</span>
-
-                            </th>
-                            <td class="stat-value">{{ team.powerUnit }}</td>
-
-                        </tr>
-
-
 
                         <tr class="table-light">
                             <th scope="row" class="stat-key">
@@ -211,14 +199,24 @@
                             <td class="stat-value">{{ team.technicalChief}}</td>
 
                         </tr>
-                       
+
+                        <tr class="table-light">
+                            <th scope="row" class="stat-key">
+
+                                <span class="text">Power Unit</span>
+
+                            </th>
+                            <td class="stat-value">{{ team.powerUnit }}</td>
+
+                        </tr>
+
                         <tr class="table-light">
                             <th scope="row" class="stat-key">
 
                                 <span class="text">Dettagli</span>
 
                             </th>
-                            <td class="stat-value"><a >More</a></td>
+                            <td class="stat-value"><a>More</a></td>
 
                         </tr>
 

@@ -28,7 +28,7 @@ namespace WebApiProject.Controllers
             db.Drivers.Values.ToList().ForEach(driver => d.Add(new DriverSimple(driver)));
             return d;
         }
-        [Route("{id:int}")]
+        [Route("{id:int}/details")]
         public IHttpActionResult GetDriver(int id)
         {
             db.GetDrivers();
