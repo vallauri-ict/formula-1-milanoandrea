@@ -28,7 +28,6 @@ $(function () {
             findCircuit: findCircuit,
             imgClick: imgClick,
             viewDetailsDriver: function (driver) {
-                //console.log(driver);
                 $.getJSON('/api/drivers/' + driver.id + '/details').done((data)=> {
                     console.log(data);
                     this.driver = data;
@@ -36,7 +35,6 @@ $(function () {
                 })
               },
             viewDetailsTeam: function (team) {
-                //console.log(team);
                 $.getJSON('/api/teams/' + team.id + '/details').done((data) => {
                     console.log(data);
                     this.team = data;
@@ -54,7 +52,7 @@ function getDrivers() {
     app.stringa = 'drivers';
     $.getJSON('/api/drivers/list').done(
         function (data) {
-            //console.log(data);
+
             app.drivers = data;
             app.rows = [];
             for (let i = 0; i < app.drivers.length; i += 4) {

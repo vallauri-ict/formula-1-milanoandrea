@@ -1,5 +1,54 @@
 ﻿body {
     background-color: #282828;
     font-family: Helvetica;
+    overflow-x: hidden;
+}
+
+.grid {
+    margin: 15px;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-column-gap: 0.5%;
+}
+
+    .grid button {
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        /*height:20px;
+            padding: 15px;*/
+    }
+
+input[type="text"] {
+    width: 100px;
+}
+
+.grid div {
+    margin: auto;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+    table * {
+        padding: 5px;
+    }
+
+#CaricaDrivers {
+    width: 170px;
+}
+
+#CaricaTeams {
+    width: 170px;
+}
+
+#CaricaCircuits {
+    width: 170px;
 }
 

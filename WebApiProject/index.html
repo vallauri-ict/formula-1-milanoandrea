@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Formula 1 </title>
+    <title>Formula 1</title>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 
@@ -15,64 +15,10 @@
     <link rel="stylesheet" href="index.css" />
     
 
-    <style>
-        body {
-            background-color: #3b383a;
-            overflow-x: hidden;
-        }
-
-        .grid {
-            margin: 15px;
-            display: grid;
-            grid-template-columns: 33.3% 33.3% 33.3%;
-            grid-column-gap: 0.5%;
-        }
-
-            .grid button {
-                margin: 0 auto;
-                display: block;
-                text-align: center;
-                font-weight: bold;
-                /*height:20px;
-            padding: 15px;*/
-            }
-
-        input[type="text"] {
-            width: 100px;
-        }
-
-        .grid div {
-            margin: auto;
-        }
-
-        table {
-            border-collapse: collapse;
-        }
-
-        table, th, td {
-            border: 1px solid black;
-        }
-
-            table * {
-                padding: 5px;
-            }
-
-        #CaricaDrivers {
-            width: 170px;
-        }
-
-        #CaricaTeams {
-            width: 170px;
-        }
-
-        #CaricaCircuits {
-            width: 170px;
-        }
-    </style>
+   
 </head>
 <body>
     <div id="div">
-        <!--<h1 style="text-align: center; color:white">Formula 1  </h1>-->
         <img style="width:30%; display: block; margin: 0 auto" src="./assets/logo.png" v-on:click="imgClick()" />
 
         
@@ -83,8 +29,8 @@
         </div>
         <div class="grid">
             <div>
-                <label style=" color:white; font-weight:bold">Driver ID:&nbsp;&nbsp;&nbsp; <input id="txtDriver" type="text" v-model="idDriver" /> </label>
-                &nbsp;<input type="button" value="Cerca pilota" id="CaricaDriver" @click="findDriver()" class="btn btn-outline-danger" />
+                <label style=" color:white; font-weight:bold">Driver ID: <input id="txtDriver" type="text" v-model="idDriver" /> </label>
+                <input type="button" value="Cerca pilota" id="CaricaDriver" @click="findDriver()" class="btn btn-outline-danger" />
             </div>
             <div>
                 <label style="color:white; font-weight:bold">Team ID: <input id="txtTeam" type="text" v-model="idTeam" /></label>
@@ -100,10 +46,10 @@
 
         <div class="row" v-if="error!=''">
             <div class="col-sm-12">
-                <h3 class="text-center" style="color: red"> {{ error }}</h3>
+                <h3 class="text-center" style="color: #dc3444"> {{ error }}</h3>
             </div>
         </div>
-        <!-- CARTE DEI PILOTI -->
+        <!--drivers-->
 
         <div class="row" v-for="(row, index) in rows" v-if="stringa=='drivers' && error=='' && !viewDetails">
             <div class="col-sm-3" v-for="(driver) in row">
@@ -112,7 +58,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ driver.firstname }} {{ driver.lastname }}</h5>
                         
-                        <a class="btn btn-link" @click="viewDetailsDriver(driver)" style="margin: 0 auto;">More</a>
+                        <a class="btn btn-link" @click="viewDetailsDriver(driver)" style="margin: 0 auto; color:#dc3444;">More</a>
                     </div>
                 </div>
             </div>
@@ -187,7 +133,7 @@
                                 <span class="text">Dettagli</span>
 
                             </th>
-                            <td class="stat-value"><a :href="'https:///en.wikipedia.org/wiki/' + driver.firstname+ '_' + driver.lastname">More</a></td>
+                            <td class="stat-value"><a :href="'https:///en.wikipedia.org/wiki/' + driver.firstname+ '_' + driver.lastname" style=" color:#dc3444;">More</a></td>
 
                         </tr>
 
@@ -197,7 +143,7 @@
         </div>
 
 
-         <!-- CARTE DEI TEAMS-->
+         <!--teams-->
         <div class="row" v-for="(row, index) in rows" v-if="stringa=='teams' && error=='' && !viewDetails">
             <div class="col-sm-3" style="padding:5px" v-for="(team) in row">
                 <div class="card" style="width:20vw; margin:0 auto">
@@ -205,7 +151,7 @@
                     <div class="card-body">
                         <h5 class="card-title"> {{ team.name }} </h5>
                         <p class="card-text"> {{ team.fullTeamName }} </p>
-                        <a @click="viewDetailsTeam(team)" class="btn btn-link" style="margin: 0 auto;">More</a>
+                        <a @click="viewDetailsTeam(team)" class="btn btn-link" style="margin: 0 auto;  color:#dc3444;">More</a>
                     </div>
                 </div>
             </div>
@@ -272,7 +218,7 @@
                                 <span class="text">Dettagli</span>
 
                             </th>
-                            <td class="stat-value"><a >Altre More</a></td>
+                            <td class="stat-value"><a >More</a></td>
 
                         </tr>
 
@@ -280,7 +226,7 @@
                 </table>
             </div>
         </div>
-        <!-- CARTE DEI CIRCUITI-->
+        <!--circtuits-->
         <div class="row" v-for="(row, index) in rows" v-if="stringa=='circuits' && error==''">
             <div class="col-sm-4" v-for="(circuit) in row">
                 <div class="card" style="display: block; margin: 10px auto; width: 18rem; height: 350px;">
@@ -288,7 +234,7 @@
                     <div class="card-body">
                         <h5 class="card-title"> {{ circuit.name }} </h5>
                         <p class="card-text"> {{ circuit.country.countryName }} </p>
-                        <a href="https://www.alvolante.it/formula1/circuito" class="btn btn-link" style="margin: 0 auto;">CIRCUITI F1</a>
+                        <a href="https://www.alvolante.it/formula1/circuito" class="btn btn-link" style="margin: 0 auto;  color:#dc3444;">CIRCUITI F1</a>
                     </div>
                 </div>
             </div>
